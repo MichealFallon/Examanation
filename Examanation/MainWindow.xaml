@@ -5,10 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Examanation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <ListBox x:Name="ltbxMembersList" HorizontalAlignment="Left" Height="308" Margin="60,30,0,0" VerticalAlignment="Top" Width="228"/>
-        <TextBox HorizontalAlignment="Left" Height="308" Margin="492,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="509*"/>
+            <ColumnDefinition Width="283*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="ltbxMembersList" HorizontalAlignment="Left" Height="308" Margin="60,30,0,0" VerticalAlignment="Top" Width="317" SelectionChanged="ltbxMembersList_SelectionChanged"/>
+        <TextBlock x:Name="tblkInfo" HorizontalAlignment="Left" Margin="428,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" Height="308" Grid.ColumnSpan="2"/>
+        <RadioButton x:Name="rdRegular" Content="Regular" HorizontalAlignment="Left" Margin="60,376,0,0" VerticalAlignment="Top" Checked="rdRegular_Checked"/>
+        <RadioButton x:Name="rdJunior" Content="Junior" HorizontalAlignment="Left" Margin="162,350,0,0" VerticalAlignment="Top" Checked="rdJunior_Checked"/>
+        <RadioButton x:Name="rdSenior" Content="Senior" HorizontalAlignment="Left" Margin="162,373,0,0" VerticalAlignment="Top" Checked="rdSenior_Checked"/>
+        <RadioButton x:Name="rdAll" Content="All" HorizontalAlignment="Left" Margin="60,350,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Checked="rdAll_Checked"/>
 
     </Grid>
 </Window>
